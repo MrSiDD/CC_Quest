@@ -1,23 +1,33 @@
 <html>
 <body>
-  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
-  <div>Current Ticket Requester: <span id="requester"></span></div>
-  <div>Select New Requester: <select id="collaborators"><option></option></select></div>
-  <div>CC current Requester<input type="checkbox" name="vehicle" id="cc_checkbox"></div>
-  <div><input type="submit" value="Submit" id="submit_change"></div>
+  <link rel="stylesheet" href="app.css"> <!--CSS-->
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script> <!--ZAF-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script> <!--JQuery-->
+  <script type="text/javascript" src="underscore-min.js"></script> <!--Underscore.JS-->
+  <script type="text/javascript" src="jquery-min.js"></script>
+  <script type="text/javascript" src="jquery-ui-min.js"></script>
+  <script type="text/javascript" src="selectBoxIt-min.js"></script>
+  <div>
+  <p><span class="label">Ticket Requester:</span></p>
+  <p class="data"><span  id="requester">Requester</span></p>
+  <p><span class="label">New Requester:</span></p>
+  <p class="data"><select id="collaborators"><option></option></select></p>
+  <p><span class="label">Keep old Requester as CC:</span>
+  <input type="checkbox" name="vehicle" class="data" id="cc_checkbox"></div></p>
+  <div><input type="submit" value="Submit" class="button" id="submit_change"></div>
   <script>
     var ticketRequester = $('#requester');
     var ticketCollaborators = $('#collaborators');
     var submitButton = $('#submit_change');
     var client = ZAFClient.init();
+    client.invoke('resize', { width: '100%', height: '240px' });
     client.get('ticket').then(function(data) {
     	var ticketID = data.ticket.id;
     	var requesterName = data.ticket.requester.name;
     	var requesterID = data.ticket.requester.id;
     	var collaborators = data.ticket.collaborators;
-    	$.each(collaborators, function(index, value) {
+    	var collaboratorsSorted = _.sortBy(collaborators, 'name');
+    	$.each(collaboratorsSorted, function(index, value) {
     		var collaboratorName = value.name;
     		var collaboratorID = value.id;
     		$(ticketCollaborators).append($('<option>', {value:collaboratorID, text:collaboratorName}));
@@ -28,6 +38,9 @@
     			var collaboratorsIDs = Number($(this).val());
     			collaboratorsArray.push(collaboratorsIDs);
     		}
+    	});
+    	$("select").selectBoxIt({
+    		showFirstOption: false
     	});
     	ticketRequester.text(requesterName);
     	submitButton.click(function() {
@@ -74,7 +87,6 @@
 	client.on('ticket.updated', function() {
 		window.location.reload();
 	});
-
   </script>
 </body>
 </html>
