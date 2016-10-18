@@ -1,0 +1,80 @@
+<html>
+<body>
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+  <div>Current Ticket Requester: <span id="requester"></span></div>
+  <div>Select New Requester: <select id="collaborators"><option></option></select></div>
+  <div>CC current Requester<input type="checkbox" name="vehicle" id="cc_checkbox"></div>
+  <div><input type="submit" value="Submit" id="submit_change"></div>
+  <script>
+    var ticketRequester = $('#requester');
+    var ticketCollaborators = $('#collaborators');
+    var submitButton = $('#submit_change');
+    var client = ZAFClient.init();
+    client.get('ticket').then(function(data) {
+    	var ticketID = data.ticket.id;
+    	var requesterName = data.ticket.requester.name;
+    	var requesterID = data.ticket.requester.id;
+    	var collaborators = data.ticket.collaborators;
+    	$.each(collaborators, function(index, value) {
+    		var collaboratorName = value.name;
+    		var collaboratorID = value.id;
+    		$(ticketCollaborators).append($('<option>', {value:collaboratorID, text:collaboratorName}));
+    	}); 
+    	var collaboratorsArray = new Array();
+    	$('#collaborators option').each(function() {
+    		if ($(this).val() != "") {
+    			var collaboratorsIDs = Number($(this).val());
+    			collaboratorsArray.push(collaboratorsIDs);
+    		}
+    	});
+    	ticketRequester.text(requesterName);
+    	submitButton.click(function() {
+    		var selectedCC = $('#collaborators option:selected').val();
+    		if (selectedCC > 0) {
+	    		var selectedCCValue = Number(selectedCC);
+	    		var changeRequester = {
+	    			url: '/api/v2/tickets/' + ticketID + '.json',
+	    			type: 'PUT',
+	    			contentType: "application/json",
+	    			data: '{"ticket": {"requester_id": ' + selectedCCValue + '}}'
+	    		};
+	    		var collaboratorsArrayRequester = new Array(); 
+	    		collaboratorsArrayRequester.push(requesterID);
+	    		var collaboratorsArrayRequesterUnion = _.union(collaboratorsArrayRequester, collaboratorsArray);
+	    		var collaboratorsArrayAdd = _.without(collaboratorsArrayRequesterUnion, selectedCCValue);
+	    		var addCC = {
+	    			url: '/api/v2/tickets/' + ticketID + '.json',
+	    			type: 'PUT',
+	    			contentType: "application/json",
+	    			data: '{"ticket": {"collaborator_ids": [' + collaboratorsArrayAdd + ']}}' //test
+	    		};
+	    		var collaboratorsArrayRemove = _.without(collaboratorsArray, selectedCCValue);
+	    		var removeCC = {
+	    			url: '/api/v2/tickets/' + ticketID + '.json',
+	    			type: 'PUT',
+	    			contentType: "application/json",
+	    			data: '{"ticket": {"collaborator_ids": [' + collaboratorsArrayRemove + ']}}' //test
+	    		};
+	    		var ccCurrentRequester = $('#cc_checkbox').is(':checked');
+	    		if (ccCurrentRequester == true) {
+	    			client.request(addCC).then(function() {
+	    				client.request(changeRequester);
+	    			});
+	    		} 
+	    		if (ccCurrentRequester != true) {
+	    			client.request(changeRequester).then(function() {
+	    				client.request(removeCC);
+	    			});
+	    		}
+	    	}
+    	});
+	});
+	client.on('ticket.updated', function() {
+		window.location.reload();
+	});
+
+  </script>
+</body>
+</html>
