@@ -1,11 +1,14 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  padding-bottom: 0;
+  margin: 0px;
+  margin-left: 10px;
 }
 
 .label {
 	font-weight: bold;
 	font-size: 14px;
+  margin: 0px;
+  padding: 0px;
 }
 
 p {
@@ -13,32 +16,68 @@ p {
 	
 }
 
-.data {
-	font-size: 16px;
+.data_requester {
+	font-size: 18px;
 	margin-bottom: 10px;
-	margin-top: 7px;
+	margin-top: 5px;
 	text-align: center;
+}
+
+.data_collaborators {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 #cc_checkbox {
 	margin-left: 10px;
 	margin-top: 10px;
 }
+
+#checkbox_label input {
+  display: none;
+}
+
+#checkbox_label span {
+  height: 15px;
+  width: 15px;
+  border: 1px solid #d3d3d3;
+  display: inline-block;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: -2px;
+  margin-left: 5px;
+}
+
+#checkbox_label span:hover {
+  border: 1px solid #aaaaaa;
+}
+
+[type=checkbox]:checked + span:before {
+  content: '\2714';
+  position: absolute;
+  top: -4px;
+  left: 1px;
+}
+
 .button {
+  outline: none;
+  border: none;
 	margin-left: 25%;
-	margin-top: 15px;
+	margin-top: 25px;
 	width: 50%;
 	background-color: #333;
-    border-color: #333;
-    color: #ffffff;
-    line-height: 27px;
-    font-size: 14px;
-    border-radius: 4px;
+  color: #cccccc;
+  line-height: 27px;
+  font-size: 14px;
+  border-radius: 4px;
 }
 
 .button:hover {
 	background-color: #444;
-    border-color: #444;
+  border-color: #444;
+  color: #ffffff;
 }
 
 #submit_change, #cc_checkbox, #collaborators {
@@ -81,7 +120,7 @@ p {
 
 /* Button */
 .selectboxit-container .selectboxit {
-  width: 272px; /* Width of the dropdown button */
+  width: 220px; /* Width of the dropdown button */
   cursor: pointer;
   padding: 0;
   border-radius: 4px;
@@ -120,15 +159,15 @@ p {
 }
 
 .selectboxit .selectboxit-option-icon-container {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 /* Options List */
 .selectboxit-container .selectboxit-options {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 272px;
-  max-height: 100px;
+  width: 220px;
+  max-height: 90px;
   margin-top: 0px;	
   padding: 0;
   list-style: none;
@@ -147,7 +186,7 @@ p {
 
 /* Individual options */
  .selectboxit-option .selectboxit-option-anchor{
-  padding: 0px;
+  padding-left: 5px;
 }
 
 /* Individual Option Hover Action */

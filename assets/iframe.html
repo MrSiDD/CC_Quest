@@ -3,24 +3,27 @@
   <link rel="stylesheet" href="app.css"> <!--CSS-->
   <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script> <!--ZAF-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script> <!--JQuery-->
-  <script type="text/javascript" src="underscore-min.js"></script> <!--Underscore.JS-->
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="jquery-ui-min.js"></script>
-  <script type="text/javascript" src="selectBoxIt-min.js"></script>
+  <script type="text/javascript" src="/libraries/underscore-min.js"></script> <!--Underscore.JS-->
+  <script type="text/javascript" src="/libraries/jquery-min.js"></script>
+  <script type="text/javascript" src="/libraries/jquery-ui-min.js"></script>
+  <script type="text/javascript" src="/libraries/selectBoxIt-min.js"></script>
   <div>
   <p><span class="label">Ticket Requester:</span></p>
-  <p class="data"><span  id="requester">Requester</span></p>
-  <p><span class="label">New Requester:</span></p>
-  <p class="data"><select id="collaborators"><option></option></select></p>
+  <p class="data_requester"><span  id="requester">{{ticket.requester}}</span></p>
+  <p><span class="label">Select a New Requester from CCs:</span></p>
+  <p class="data_collaborators"><select id="collaborators"><option></option></select></p>
   <p><span class="label">Keep old Requester as CC:</span>
-  <input type="checkbox" name="vehicle" class="data" id="cc_checkbox"></div></p>
+  <label id="checkbox_label">
+  <input type='checkbox' id="cc_checkbox">
+  <span class="data"></span>
+  </label>
   <div><input type="submit" value="Submit" class="button" id="submit_change"></div>
   <script>
     var ticketRequester = $('#requester');
     var ticketCollaborators = $('#collaborators');
     var submitButton = $('#submit_change');
     var client = ZAFClient.init();
-    client.invoke('resize', { width: '100%', height: '240px' });
+    client.invoke('resize', { width: '100%', height: '225px' });
     client.get('ticket').then(function(data) {
     	var ticketID = data.ticket.id;
     	var requesterName = data.ticket.requester.name;
