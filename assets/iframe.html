@@ -3,9 +3,9 @@
   <link rel="stylesheet" href="app.css"> <!--CSS-->
   <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script> <!--ZAF-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!--JQuery-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> <!--JQuery-UI-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script> <!--Underscore.JS-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.selectboxit/3.8.0/jquery.selectBoxIt.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.selectboxit/3.8.0/jquery.selectBoxIt.min.js"></script> <!--SelectBoxIt-->
   <div>
   <p><span class="label">Ticket Requester:</span></p>
   <p class="data_requester"><span  id="requester"></span></p>
@@ -93,10 +93,10 @@
 	    		}
 	    	}
     	});
-	});
-	//client.on('ticket.updated', function() {
-		//window.location.reload();
-	//});
+    });
+    client.on('ticket.updated', function() {
+      window.location.reload();
+    });
   </script>
 </body>
 </html>
