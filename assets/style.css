@@ -1846,7 +1846,7 @@ svg{ max-height:100%; }
   box-sizing:border-box;
   border:1px solid #ddd;
   border-radius:4px;
-  box-shadow:0 5px 5px 0 rgba(36,83,107,.15);
+  box-shadow:0 2px 2px 0 rgba(36,83,107,.15);
   background-color:#fff;
   cursor:default;
   padding:10px 0;
@@ -1855,7 +1855,7 @@ svg{ max-height:100%; }
   font-size:14px;
   font-weight:400;
   width: 296px;
-  max-height: 100px;
+  max-height: 105px;
   overflow-y: scroll;
   overflow-x: hidden;
   padding-bottom: 18px;
@@ -1982,6 +1982,7 @@ ul {
   position:relative;
   cursor:pointer;
   padding-left:0px;
+	margin-left:2px;
   white-space:nowrap;
   color:#999;
   -webkit-user-select:none;
