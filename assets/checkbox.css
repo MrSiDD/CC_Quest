@@ -23,6 +23,7 @@
   position:relative;
   cursor:pointer;
   padding-left:0px;
+	margin-left:2px;
   white-space:nowrap;
   color:#999;
   -webkit-user-select:none;
