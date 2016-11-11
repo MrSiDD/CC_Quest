@@ -1,7 +1,6 @@
 body {
 	-ms-overflow-style: none;
-	overflow-y: hidden;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .label {
