@@ -16,6 +16,7 @@
   max-height: 100px;
   overflow: scroll;
   padding-bottom: 18px;
+  -ms-overflow-style: scrollbar;
 }
 
 .menu__item{
