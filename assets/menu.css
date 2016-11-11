@@ -15,7 +15,8 @@
   font-weight:400;
   width: 296px;
   max-height: 100px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding-bottom: 18px;
   -ms-overflow-style: scrollbar;
 }
