@@ -2190,7 +2190,7 @@ body {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	position: absolute;
-	max-width: 100%;
+	max-width: 225px;
 	top: 33px;
 	font-weight: 600;
 }
@@ -2201,7 +2201,7 @@ body {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	position: absolute;
-	max-width: 100%;
+	max-width: 220px;
 	top: 52px;
 	font-weight: 600;
 }
