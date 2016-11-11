@@ -3,7 +3,7 @@ body {
 }
 
 .label {
-	font-size: 18px;
+	font-size: 16px;
 	height: 26px;
 	font-weight: 800;
 	padding: 1px 2px 1px 5px;
@@ -24,7 +24,7 @@ body {
 }
 
 #requester {
-	font-size: 16px;
+	font-size: 14px;
 	margin-left: 25px;
 	text-overflow: ellipsis;
 	overflow: hidden;
