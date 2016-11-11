@@ -9,7 +9,7 @@ Make CCs the Requesters of Zendesk tickets
 * Let's you choose one CC to make the new Ticket Requester.
 * Gives you the option of adding the old Ticket Requester to the list of CCs.
 
-Please submit bug reports [here](https://github.com/aculligan/CC_Quest/issues). Pull requests are welcome.
+Please submit bug reports [here](https://github.com/aculligan/CC_Quest/issues).
 
 ### Screenshot(s):
 ![Screenshot 1](assets/screenshot-1.png)
