@@ -21,6 +21,10 @@
   -ms-overflow-style: scrollbar;
 }
 
+.menu::-webkit-scrollbar { 
+    display: block; 
+}
+
 .menu__item{
   display:block;
   position:relative;
