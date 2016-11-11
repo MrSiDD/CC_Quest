@@ -147,20 +147,12 @@
           var ccCurrentRequester = $('#checkbox').is(':checked');
           if (ccCurrentRequester == true) {
             client.request(addCC).then(function() {
-              client.request(changeRequester).then(function() {
-                client.on('ticket.updated', function() {
-                  window.location.reload(true);
-                });
-              });
+              client.request(changeRequester);
             });
           }
           else if (ccCurrentRequester != true) {
             client.request(changeRequester).then(function() {
-              client.request(removeCC).then(function() {
-                client.on('ticket.updated', function() {
-                  window.location.reload(true);
-                });
-              });
+              client.request(removeCC);
             });
           }
         }
