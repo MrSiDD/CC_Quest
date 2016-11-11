@@ -1,13 +1,13 @@
 <html>
 <body>
-  <link rel="stylesheet" href="bedrock.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="avatar.css">
   <link rel="stylesheet" href="menu-button.css">
   <link rel="stylesheet" href="menu.css">
   <link rel="stylesheet" href="tooltip.css">
   <link rel="stylesheet" href="checkbox.css">
   <link rel="stylesheet" href="submit.css">
+  <link rel="stylesheet" href="index.css">
   <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
@@ -156,7 +156,7 @@
             client.request(addCC).then(function() {
               client.request(changeRequester).then(function() {
                 client.on('ticket.updated', function() {
-                  window.location.reload();
+                  window.location.reload(true);
                 });
               });
             });
@@ -165,7 +165,7 @@
             client.request(changeRequester).then(function() {
               client.request(removeCC).then(function() {
                 client.on('ticket.updated', function() {
-                  window.location.reload();
+                  window.location.reload(true);
                 });
               });
             });
@@ -174,7 +174,7 @@
       });
     });
     client.on('ticket.updated', function() {
-      window.location.reload();
+      window.location.reload(true);
     });
   </script>
 </body>
