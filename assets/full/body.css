@@ -1,0 +1,59 @@
+body {
+	-ms-overflow-style: none;
+}
+
+.label {
+	font-size: 16px;
+	height: 26px;
+	font-weight: 800;
+	padding: 1px 2px 1px 5px;
+	text-overflow: ellipsis;
+	width: 100%;
+}
+
+.data_requester {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	max-width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#requester-image {
+	margin-left: 15px;
+}
+
+#requester {
+	font-size: 14px;
+	margin-left: 25px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	position: absolute;
+	max-width: 225px;
+	top: 33px;
+	font-weight: 600;
+}
+
+#requester-email{
+	font-size: 12px;
+	margin-left: 25px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	position: absolute;
+	max-width: 220px;
+	top: 52px;
+	font-weight: 600;
+}
+
+.button {
+	margin-top: 5px;
+}
+
+.checkbox {
+	margin-top: 20px;
+	vertical-align: middle;
+}
+#submit_change {
+	margin-left: 109px;
+	margin-top: 20px;
+}

@@ -1,0 +1,96 @@
+.c-chk{
+  margin:0;
+  border:0;
+  padding:0;
+  line-height:20px;
+  font-size:14px;
+}
+
+#checkbox {
+  display: none;
+}
+
+.c-chk__input{
+  position:relative;
+  clip:rect(1px,1px,1px,1px);
+}
+
+.c-chk__input:focus{
+  outline: none;
+}
+
+.c-chk__label{
+  position:relative;
+  cursor:pointer;
+  padding-left:0px;
+	margin-left:2px;
+  white-space:nowrap;
+  color:#999;
+  -webkit-user-select:none;
+     -moz-user-select:none;
+      -ms-user-select:none;
+          user-select:none;
+}
+
+.c-chk__label:after,.c-chk__label:before{
+  position: absolute;
+  -webkit-transition: border-color .25s ease-in-out,box-shadow .1s ease-in-out,background-color .25s ease-in-out,background-image .25s ease-in-out,color .25s ease-in-out;
+  transition: border-color .25s ease-in-out,box-shadow .1s ease-in-out,background-color .25s ease-in-out,background-image .25s ease-in-out,color .25s ease-in-out;
+  margin-top: -2px;
+  margin-left: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  color: inherit;
+  content: '';
+}
+
+.c-chk__label:before{
+  background-color:#fbfbfb;
+}
+
+.c-chk__label:after{
+  border-color:transparent;
+}
+
+.c-chk.is-checked>.c-chk__label:after,.c-chk>.c-chk__input:checked~.c-chk__label:after{
+  background:no-repeat 50%/100% url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' color='%23FFF'%3E%3Cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M4.5 7.19L6.76 9.5l2.744-5'/%3E%3C/svg%3E") #999;
+}
+
+.c-chk.is-focused>.c-chk__label:before,.c-chk.is-hovered>.c-chk__label:before,.c-chk>.c-chk__label:hover:before{
+  background-color:#fff;
+}
+
+.c-chk.is-focused>.c-chk__label:after{
+  outline:none;
+  border-color:#999;
+  box-shadow:0 0 0 3px rgba(48,170,188,.4);
+}
+
+.c-chk.is-active.is-active>.c-chk__label:after,.c-chk>.c-chk__label:active.c-chk__label:active:after{
+  -webkit-transition:border-color .1s ease-in-out,background-color .1s ease-in-out,background-image .1s ease-in-out,color .1s ease-in-out;
+  transition:border-color .1s ease-in-out,background-color .1s ease-in-out,background-image .1s ease-in-out,color .1s ease-in-out;
+  border-color:#999;
+  background-color:rgba(0,0,0,.05);
+}
+
+.c-chk.is-active>.c-chk__input:enabled:checked~.c-chk__label:after,.c-chk.is-checked.is-active:not(.is-disabled)>.c-chk__label:after,.c-chk:not(.is-disabled)>.c-chk__input:enabled:checked~.c-chk__label:active:after{
+  border-color:#ddd;
+  background-color:#ddd;
+}
+
+.c-chk.is-disabled.is-disabled.is-disabled>.c-chk__label,.c-chk>.c-chk__input:disabled.c-chk__input:disabled~.c-chk__label{
+  cursor:default;
+}
+
+.c-chk.is-disabled.is-disabled.is-disabled>.c-chk__label:before,.c-chk>.c-chk__input:disabled.c-chk__input:disabled~.c-chk__label:before{
+  border-color:#ddd;
+}
+
+.c-chk.is-disabled.is-disabled.is-disabled>.c-chk__label:after,.c-chk>.c-chk__input:disabled.c-chk__input:disabled~.c-chk__label:after{
+  border-color:transparent;
+  box-shadow:none;
+  background-color:#ddd;
+}
