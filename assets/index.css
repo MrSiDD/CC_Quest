@@ -1,4 +1,8 @@
-.label{
+body {
+	-ms-overflow-style: none;
+}
+
+.label {
 	font-size: 18px;
 	height: 26px;
 	font-weight: 800;
@@ -41,11 +45,11 @@
 	font-weight: 600;
 }
 
-.button{
+.button {
 	margin-top: 5px;
 }
 
-.checkbox{
+.checkbox {
 	margin-top: 10px;
 	vertical-align: middle;
 }
