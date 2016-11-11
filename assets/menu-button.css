@@ -2,7 +2,7 @@
   display: inline-block;
   -webkit-transition: border-color .25s ease-in-out,box-shadow .1s ease-in-out,background-color .25s ease-in-out,color .25s ease-in-out;
   transition: border-color .25s ease-in-out,box-shadow .1s ease-in-out,background-color .25s ease-in-out,color .25s ease-in-out;
-  margin-left: 3.459%;
+  margin-left: 11px;
   border: 1px solid #ddd;
   border-radius: 4px;
   cursor: pointer;
