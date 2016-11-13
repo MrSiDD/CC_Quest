@@ -1,12 +1,12 @@
 {
   "app": {
-    "description": "Play the famous zen tunes in your help desk.",
-    "name": "Buddha Machine"
+    "description": "Make CCs the Requesters of Zendesk tickets.",
+    "name": "CC Quest"
   },
-  "loading": "Welcome to this Sample App",
+  "loading": "Welcome to CC Quest",
   "fetch": {
-    "done": "Good",
-    "fail": "failed to fetch information from the server"
+    "done": "Success!",
+    "fail": "Failed to fetch information from the server"
   },
   "id": "ID",
   "email": "Email",
