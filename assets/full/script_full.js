@@ -22,9 +22,15 @@ $(document).ready(function() {
     ticketRequester.text(requesterName);
     ticketRequesterEmail.text(requesterEmail);
     $('#requester-image').attr('src', requesterAvatar);
-    if (collaborators.length < 1 || ticketStatus == 'closed') {
+    if (collaborators.length < 1) {
       $(menuButton).prop('disabled', true);
       $(menuButtonContent).text('No CCs Available');
+      $(checkbox).prop('disabled', true);
+      $(submitButton).prop('disabled', true);
+    }
+    if (ticketStatus == 'closed') {
+      $(menuButton).prop('disabled', true);
+      $(menuButtonContent).text('Thid Ticket is Closed');
       $(checkbox).prop('disabled', true);
       $(submitButton).prop('disabled', true);
     }
