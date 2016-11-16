@@ -12,6 +12,7 @@ $(document).ready(function() {
   client.invoke('resize', { width: '318px', height: '260px' });
   client.get('ticket').then(function(data) {
     var ticketID = data.ticket.id;
+    var ticketStatus = data.ticket.status;
     var requesterName = data.ticket.requester.name;
     var requesterAvatar = data.ticket.requester.avatarUrl;
     var requesterID = data.ticket.requester.id;
@@ -21,7 +22,7 @@ $(document).ready(function() {
     ticketRequester.text(requesterName);
     ticketRequesterEmail.text(requesterEmail);
     $('#requester-image').attr('src', requesterAvatar);
-    if (collaborators.length < 1) {
+    if (collaborators.length < 1 || ticketStatus == 'closed') {
       $(menuButton).prop('disabled', true);
       $(menuButtonContent).text('No CCs Available');
       $(checkbox).prop('disabled', true);
