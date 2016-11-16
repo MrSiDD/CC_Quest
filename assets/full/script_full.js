@@ -30,7 +30,7 @@ $(document).ready(function() {
     }
     if (ticketStatus == 'closed') {
       $(menuButton).prop('disabled', true);
-      $(menuButtonContent).text('Thid Ticket is Closed');
+      $(menuButtonContent).text('This Ticket is Closed');
       $(checkbox).prop('disabled', true);
       $(submitButton).prop('disabled', true);
     }
