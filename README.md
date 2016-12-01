@@ -1,3 +1,5 @@
+⚠️ Use of this software is subject to important terms and conditions as set forth in the [License](https://aculligan.github.io/license) page ⚠️
+
 # CC Quest
 
 Make CCs the Requesters of Zendesk tickets 
