@@ -14,7 +14,6 @@ Make CCs the Requesters of Zendesk tickets
 #### This App is available in: 
 
 * English
-* Spanish
 
 Please submit bug reports [here](https://github.com/aculligan/CC_Quest/issues).
 
@@ -23,3 +22,10 @@ Please submit bug reports [here](https://github.com/aculligan/CC_Quest/issues).
 ![Screenshot 2](assets/screenshot-2.png)
 ![Screenshot 3](assets/screenshot-3.png)
 ![Screenshot 4](assets/working.gif)
+
+### Version:
+
+✅ 🆕 Version 1.1 published [here](https://www.zendesk.com/apps/cc-quest/).
+
+📝 🔜 Version 1.1.1 will include: 
+* Translation for Spanish.
