@@ -18,10 +18,10 @@ Make CCs the Requesters of Zendesk tickets
 Please submit bug reports [here](https://github.com/aculligan/CC_Quest/issues).
 
 ### Screenshots:
-![Screenshot 1](assets/screenshot-1.png)
-![Screenshot 2](assets/screenshot-2.png)
-![Screenshot 3](assets/screenshot-3.png)
-![Screenshot 4](assets/working.gif)
+![Screenshot 1](https://aculligan.github.io/CDN/CC_Quest/img/screenshot-1.png)
+![Screenshot 2](https://aculligan.github.io/CDN/CC_Quest/img/screenshot-2.png)
+![Screenshot 3](https://aculligan.github.io/CDN/CC_Quest/img/screenshot-3.png)
+![Screenshot 4](https://aculligan.github.io/CDN/CC_Quest/img/working.gif)
 
 ### Version:
 
