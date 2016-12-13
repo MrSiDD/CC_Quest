@@ -107,7 +107,13 @@ class TicketSidebar {
               var collaboratorObjectAvatar = index.avatar;
               var collaboratorsLi = $('.menu__item').length;
               if (collaboratorsLi < collaboratorsNumber) {
-                $ticketCollaborators.append($('<li class="menu__item" id="'+collaboratorObjectID+'"><figure class="c-avatar c-avatar--small"><img id="' + collaboratorObjectID + 'img" alt="user" src="' + collaboratorObjectAvatar + '"></figure><span class="menu-li-content" id="'+collaboratorObjectID+'-span" value="' + collaboratorObjectID + '">' + collaboratorObjectName + '</span></li><li class="c-tooltip" id="tooltip_' + collaboratorObjectID + '" style="display: none;">' + collaboratorObjectEmail + '</li><li class="c-arrow" id="arrow_' + collaboratorObjectID + '" style="display: none;"> </li>').attr('role', 'menuitem').attr('id', collaboratorObjectID));
+                $ticketCollaborators.append($(`
+                  <li class="menu__item" id="${collaboratorObjectID}">
+                    <figure class="c-avatar c-avatar--small"><img id="${collaboratorObjectID}-img" alt="user" src="${collaboratorObjectAvatar}"></figure>
+                    <span class="menu-li-content" id="${collaboratorObjectID}-span" value="${collaboratorObjectID}">${collaboratorObjectName}</span>
+                  </li>
+                  <li class="c-tooltip" id="tooltip_${collaboratorObjectID}" style="display: none;">${collaboratorObjectEmail}</li>
+                  <li class="c-arrow" id="arrow_${collaboratorObjectID}" style="display: none;"></li>`).attr('role', 'menuitem').attr('id', collaboratorObjectID));
               }
             }); 
             $menu.toggle();
