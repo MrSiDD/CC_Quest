@@ -114,7 +114,7 @@ class TicketSidebar {
             var $menuItem = $('.menu__item');
             $menuItem.hover(function() {
               var collaboratorID = $(this).attr('id');
-              $('.tooltip_' + collaboratorID).show();
+              $('.tooltip_' + collaboratorID).css('display', 'inline-block');
             }, function() {
               var collaboratorID = $(this).attr('id');
               $('.tooltip_' + collaboratorID).hide();
