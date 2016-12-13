@@ -107,17 +107,19 @@ class TicketSidebar {
               var collaboratorObjectAvatar = index.avatar;
               var collaboratorsLi = $('.menu__item').length;
               if (collaboratorsLi < collaboratorsNumber) {
-                $ticketCollaborators.append($('<li class="menu__item" id="'+collaboratorObjectID+'"><figure class="c-avatar c-avatar--small"><img id="' + collaboratorObjectID + 'img" alt="user" src="' + collaboratorObjectAvatar + '"></figure><span class="menu-li-content" id="'+collaboratorObjectID+'-span" value="' + collaboratorObjectID + '">' + collaboratorObjectName + '</span></li><li class="c-tooltip tooltip_' + collaboratorObjectID + '" style="display:none;">' + collaboratorObjectEmail + '</li><li class="c-arrow tooltip_' + collaboratorObjectID + '"> </li>').attr('role', 'menuitem').attr('id', collaboratorObjectID));
+                $ticketCollaborators.append($('<li class="menu__item" id="'+collaboratorObjectID+'"><figure class="c-avatar c-avatar--small"><img id="' + collaboratorObjectID + 'img" alt="user" src="' + collaboratorObjectAvatar + '"></figure><span class="menu-li-content" id="'+collaboratorObjectID+'-span" value="' + collaboratorObjectID + '">' + collaboratorObjectName + '</span></li><li class="c-tooltip" id="tooltip_' + collaboratorObjectID + '">' + collaboratorObjectEmail + '</li><li class="c-arrow" id="arrow_' + collaboratorObjectID + '"> </li>').attr('role', 'menuitem').attr('id', collaboratorObjectID));
               }
             }); 
             $menu.toggle();
             var $menuItem = $('.menu__item');
             $menuItem.hover(function() {
               var collaboratorID = $(this).attr('id');
-              $('.tooltip_' + collaboratorID).css('display', 'inline-block');
+              $('#tooltip_' + collaboratorID).css('display', 'inline-block');
+              $('#arrow_' + collaboratorID).css('display', 'block');
             }, function() {
               var collaboratorID = $(this).attr('id');
               $('.tooltip_' + collaboratorID).hide();
+              $('#arrow_' + collaboratorID).hide();
             });
             $menuItem.click(function () {
               var collaboratorID = $(this).attr('id');
