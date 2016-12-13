@@ -11,7 +11,7 @@ Make CCs the Requesters of Zendesk tickets
 *   Creates an alphabetical list of all the CCs in the ticket.
 *   Let's you choose one CC to make the new Ticket Requester.
 *   Gives you the option of adding the old Ticket Requester to the list of CCs.
-*   Avaliable in English.
+*   Available in English.
 
 Please submit bug reports [here](https://github.com/aculligan/CC_Quest/issues).
 
