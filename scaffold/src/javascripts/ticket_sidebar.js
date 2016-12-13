@@ -10,6 +10,7 @@ class TicketSidebar {
     this._context = data.context;
     this.storage = new Storage(this._metadata.installationId);
     this.view = new View({ afterRender: () => {
+      this.getCurrentUser().then(this.renderMain.bind(this));
       client.invoke('resize', { width: '318px', height: '260px' });
       client.get('ticket').then(function (data) {
         var ticketID = data.ticket.id;
@@ -215,7 +216,6 @@ class TicketSidebar {
         });
       });
     }});
-    this.getCurrentUser().then(this.renderMain.bind(this));
   }
   getCurrentUser() {
     return this.client.request({ url: '/api/v2/users/me.json' });
