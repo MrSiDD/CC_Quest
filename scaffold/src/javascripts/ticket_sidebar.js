@@ -42,7 +42,7 @@ class TicketSidebar {
             $ticketRequesterEmail.text(requesterEmail);
             $requesterImage.attr('src', requesterAvatar);
             $('.spinner').hide();
-            $('.hidden').removeClass('hidden');
+            $('.data_requester .hidden').removeClass('hidden');
           });
           var $menuButtonContent = $('.menu-btn-content');
           var $menuButton = $('.menu-btn');
@@ -136,6 +136,8 @@ class TicketSidebar {
               $menuButtonContent.text(collaboratorName);
               $menu.hide();
               $checkbox.prop('disabled', false);
+              $('.checkbox .label').removeClass('hidden');
+              $('.checkbox .c-chk').removeClass('hidden');
               $submitButton.prop('disabled', false);
             });
             $(document).mouseup(function (e) {
@@ -144,6 +146,8 @@ class TicketSidebar {
                 $menuButtonImage.attr('src', 'https://i0.wp.com/assets.zendesk.com/images/2016/default-avatar-80.png');
                 $menuButtonContent.text('').attr('id', '');
                 $checkbox.prop('disabled', true);
+                $('.checkbox .label').addClass('hidden');
+                $('.checkbox .c-chk').addClass('hidden');
                 $submitButton.prop('disabled', true);
               }
             });
