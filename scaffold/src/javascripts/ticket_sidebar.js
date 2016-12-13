@@ -1,5 +1,6 @@
 import View from 'view';
-import Storage from 'storage'
+import Storage from 'storage';
+import I18n from 'i18n';
 
 
 class TicketSidebar {
@@ -48,12 +49,12 @@ class TicketSidebar {
           var collaboratorIDs = data.ticket.collaborator_ids;
           if (collaboratorIDs.length < 1) {
             $menuButton.prop('disabled', true);
-            $menuButtonContent.text('No CCs Available');
+            $menuButtonContent.text(I18n.t("no-ccs"));
           }
           var ticketStatus = data.ticket.status;
           if (ticketStatus == 'closed') {
             $menuButton.prop('disabled', true);
-            $menuButtonContent.text('This Ticket is Closed');
+            $menuButtonContent.text(I18n.t("closed-ticket"));
           }
           var $ticketCollaborators = $('#collaborators');
           var $menuButtonImage = $('#button-image');

@@ -39,6 +39,6 @@
    </span>
  </div>
  <div>
-   <input class="submit-btn submit-btn--primary" type="button" id="submit_change" value="Submit" disabled="disabled">
+   <input class="submit-btn submit-btn--primary" type="button" id="submit_change" value="{{t "submit"}}" disabled="disabled">
  </div>
 </div>

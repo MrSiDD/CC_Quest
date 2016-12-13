@@ -5,5 +5,8 @@
   },
   "requester": "Solicitante del Ticket",
   "ccs": "Seleccionar nuevo Solicitante",
-  "old-cc": "Mantener al Solicitante original en CC"
+  "old-cc": "Mantener al Solicitante original en CC",
+  "submit": "Enviar",
+  "closed-ticket": "Este Ticket está Cerrado",
+  "no-ccs": "No hay CCs Disponibles"
 }

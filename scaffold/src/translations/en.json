@@ -5,5 +5,8 @@
   },
   "requester": "Ticket Requester",
   "ccs": "Select New Requester from CCs",
-  "old-cc": "Keep old Requester as CC"
+  "old-cc": "Keep old Requester as CC",
+  "submit": "Submit",
+  "closed-ticket": "This Ticket is Closed",
+  "no-ccs": "No CCs Available"
 }
