@@ -216,17 +216,12 @@ class TicketSidebar {
       });
     }});
 
-    this.getCurrentUser().then(this.renderMain.bind(this));
+    this.renderMain.bind(this);
 
     this.view.switchTo('main');
   }
-
-  getCurrentUser() {
-    return this.client.request({ url: '/api/v2/users/me.json' });
-  }
-
   renderMain(data) {
-    this.view.switchTo('main', data.user);
+    this.view.switchTo('main');
   }
 }
 
