@@ -1,0 +1,9 @@
+{
+  "app": {
+    "name": "CC Quest",
+    "description": "Make CCs the Requesters of Zendesk tickets."
+  },
+  "requester": "Ticket Requester",
+  "ccs": "Select New Requester from CCs",
+  "old-cc": "Keep old Requester as CC"
+}
