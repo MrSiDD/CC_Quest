@@ -157,6 +157,8 @@ class TicketSidebar {
                 $menuButtonImage.attr('src', 'https://i0.wp.com/assets.zendesk.com/images/2016/default-avatar-80.png');
                 $menuButtonContent.text('').attr('id', '');
                 $checkbox.prop('disabled', true);
+                $('.checkbox .label').addClass('hidden');
+                $('.checkbox .c-chk').addClass('hidden');
                 $submitButton.prop('disabled', true);
               }
             });
