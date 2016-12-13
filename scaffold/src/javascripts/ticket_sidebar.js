@@ -130,7 +130,7 @@ class TicketSidebar {
             $menuItem.click(function () {
               var collaboratorID = $(this).attr('id');
               var collaboratorName = $(this).text();
-              var collaboratorAvatar = $('#' + collaboratorID + 'img').attr('src');
+              var collaboratorAvatar = $('#' + collaboratorID + '-img').attr('src');
               $menuButtonContent.attr('id', collaboratorID);
               $('#button-image').attr('src', collaboratorAvatar);
               $menuButtonContent.text(collaboratorName);
