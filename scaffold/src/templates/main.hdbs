@@ -30,10 +30,10 @@
    </ul>
  </div>
  <div class="checkbox">
-   <span class="label">
+   <span class="label hidden">
      {{t "old-cc"}}:
    </span>
-   <span class="c-chk">
+   <span class="c-chk hidden">
      <input class="c-chk__input" id="checkbox" type="checkbox" style="display: none;" disabled="disabled">
      <label class="c-chk__label" dir="ltr" for="checkbox"></label>
    </span>
