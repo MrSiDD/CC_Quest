@@ -2,16 +2,15 @@ import View from 'view';
 import Storage from 'storage';
 import I18n from 'i18n';
 
-
 class TicketSidebar {
   constructor(client, data) {
     this.client = client;
     this._metadata = data.metadata;
     this._context = data.context;
+
     this.storage = new Storage(this._metadata.installationId);
     this.view = new View({ afterRender: () => {
-      this.getCurrentUser().then(this.renderMain.bind(this));
-      client.invoke('resize', { width: '318px', height: '260px' });
+      this.client.invoke('resize', { height: '260px', width: '100%' });
       client.get('ticket').then(function (data) {
         var ticketID = data.ticket.id;
         var getTicket = {
@@ -216,14 +215,19 @@ class TicketSidebar {
         });
       });
     }});
+
+    this.getCurrentUser().then(this.renderMain.bind(this));
+
+    this.view.switchTo('main');
   }
+
   getCurrentUser() {
     return this.client.request({ url: '/api/v2/users/me.json' });
   }
+
   renderMain(data) {
     this.view.switchTo('main', data.user);
   }
 }
-
 
 export default TicketSidebar;
