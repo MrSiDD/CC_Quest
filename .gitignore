@@ -7,3 +7,11 @@
 scaffold/src/.DS_Store
 scaffold/src/templates/.DS_Store
 scaffold/lib/.DS_Store
+
+scaffold/lib/loaders/translations-loader.js
+
+scaffold/lib/javascripts/i18n.js
+
+scaffold/lib/javascripts/storage.js
+
+scaffold/lib/javascripts/view.js
