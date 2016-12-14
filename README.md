@@ -17,18 +17,18 @@ Make CCs the Requesters of Zendesk tickets
 
 ### Version:
 
-#### 📝 Version 1.1.1 - Pending review.
+#### Version 1.1.1 - Pending review.
 * Translation for Spanish.
 
-#### 🆕 Version 1.1 - Published [here](https://www.zendesk.com/apps/cc-quest/).
+#### Version 1.1 - Published [here](https://www.zendesk.com/apps/cc-quest/).
 * New user interface.
 
-#### 1️⃣ Version 1.0
+#### Version 1.0
 * Initial publication.
 
 ### Issues:
 
-No known issues at this time 😌
+* No known issues at this time.
 
 
 ❗️Found an issue? Please submit a report [here](https://github.com/aculligan/CC_Quest/issues), or email [Support](mailto:support@alexculligan.com?Subject=CC%20Quest%20Support).
