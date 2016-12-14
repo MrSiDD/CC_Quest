@@ -1,4 +1,5 @@
 .DS_Store
+*/.DS_Store
 /scaffold/*
 !/scaffold/dist/tmpx`
 !/scaffold/lib/templates
