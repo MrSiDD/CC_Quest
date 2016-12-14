@@ -2,7 +2,8 @@
 */.DS_Store
 /scaffold/*
 !/scaffold/dist/tmp/*
-!/scaffold/lib/*
+!/scaffold/lib/templates/*
 !/scaffold/src/*
 scaffold/src/.DS_Store
 scaffold/src/templates/.DS_Store
+scaffold/lib/.DS_Store
