@@ -172,28 +172,20 @@ class TicketSidebar {
             let collaboratorsArrayAdd = _.without(collaboratorsAndRequesterArray, selectedCCValue);
             let collaboratorsArrayRemove = _.without(collaboratorIDs, selectedCCValue);
             let ccCurrentRequester = $('#checkbox').is(':checked');
-            let changeRequester = {
-              url: `/api/v2/tickets/${ticketID}.json`,
-              type: 'PUT',
-              contentType: 'application/json',
-              data: `{"ticket": {"requester_id": ${selectedCCValue}}}`
-            };
             let addCC = {
               url: `/api/v2/tickets/${ticketID}.json`,
               type: 'PUT',
               contentType: 'application/json',
-              data: `{"ticket": {"collaborator_ids": [${collaboratorsArrayAdd}]}}`
+              data: `{"ticket": {"requester_id": ${selectedCCValue}, "collaborator_ids": [${collaboratorsArrayAdd}]}}`
             };
             let removeCC = {
               url: `/api/v2/tickets/${ticketID}.json`,
               type: 'PUT',
               contentType: 'application/json',
-              data: `{"ticket": {"collaborator_ids": [${collaboratorsArrayRemove}]}}`
+              data: `{"ticket": {"requester_id": ${selectedCCValue}, "collaborator_ids": [${collaboratorsArrayRemove}]}}`
             };
             if (ccCurrentRequester === true) {
-              client.request(addCC).then(function () {
-                client.request(changeRequester);
-              });
+              client.request(addCC);
               ga('create', 'UA-87663201-1', 'auto');
               ga('set', 'checkProtocolTask', function (){});
               ga('require', 'displayfeatures');
@@ -204,9 +196,7 @@ class TicketSidebar {
                 eventLabel: 'Keep Requester CCd'
               });
             } else if (ccCurrentRequester !== true) {
-              client.request(changeRequester).then(function () {
-                client.request(removeCC);
-              });
+              client.request(removeCC);
             }
           });
         });
