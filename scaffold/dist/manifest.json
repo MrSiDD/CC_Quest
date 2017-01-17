@@ -1,0 +1,19 @@
+{
+  "name": "CC Quest",
+  "author": {
+    "name": "Alex Culligan",
+    "email": "support@alexculligan.com",
+    "url": "http://ccquest.alexculligan.com/"
+  },
+  "defaultLocale": "en",
+  "private": false,
+  "singleInstall": true,
+  "location": {
+    "support": {
+      "ticket_sidebar": "assets/index.html"
+    }
+  },
+  "version": "1.1.1",
+  "frameworkVersion": "2.0",
+  "gaID": "UA-87663201-1"
+}
