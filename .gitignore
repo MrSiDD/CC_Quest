@@ -13,3 +13,5 @@ scaffold/lib/javascripts/storage.js
 scaffold/lib/javascripts/view.js
 scaffold/dist/.DS_Store
 scaffold/dist/assets/.DS_Store
+scaffold/dist/assets/main.css
+scaffold/dist/assets/main.js

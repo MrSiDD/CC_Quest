@@ -1,0 +1,35 @@
+.c-tooltip {
+  background-color: #333;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  left: 21px;
+  line-height: 1.66667;
+  margin: 0;
+  margin-top: -16px;
+  max-width: 250px;
+  overflow: hidden;
+  padding: 0 1.25em;
+  position: relative;
+  text-overflow: ellipsis;
+  top: 3px;
+  z-index: 1111;
+}
+
+.c-arrow {
+  background-color: #333;
+  border-width: 10px;
+  height: 6px;
+  left: 30px;
+  margin: -10px 0 -16px 0;
+  max-width: 6px;
+  overflow: hidden;
+  position: relative;
+  top: -16px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 999;
+}
