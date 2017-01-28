@@ -128,10 +128,9 @@ class TicketSidebar {
                   </li>
                   <li class="c-tooltip tooltip_${collaboratorObjectID}" style="display: none;">${collaboratorObjectEmail}</li>
                   <li class="c-arrow arrow_${collaboratorObjectID}" style="display: none;"></li>`).attr('role', 'menuitem').attr('id', collaboratorObjectID));
+                $('.badge-visible').show();
               }
             });
-            let $badgeVisible = $('.badge-visible');
-            $badgeVisible.show();
             $menu.toggle();
             let $menuItem = $('.menu__item');
             $menuItem.hover(function () {
@@ -155,7 +154,7 @@ class TicketSidebar {
               $menuButtonImage.attr('src', collaboratorAvatar);
               $menuButtonContent.text(collaboratorName);
               $buttonBadge.addClass(collaboratorRoleBadge);
-              $badgeVisible.show();
+              $('.badge-visible').show();
               $menu.hide();
               $checkbox.prop('disabled', false);
               $('.checkbox .label').removeClass('hidden');
