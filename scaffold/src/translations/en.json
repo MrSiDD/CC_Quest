@@ -8,5 +8,6 @@
   "old-cc": "Keep old Requester as CC",
   "submit": "Submit",
   "closed-ticket": "This Ticket is Closed",
-  "no-ccs": "No CCs Available"
+  "no-ccs": "No CCs Available",
+  "loading": "Loading"
 }

@@ -6,6 +6,25 @@ body {
   overflow: hidden;
 }
 
+.spinner {
+  height: 90px;
+  margin-top: 85px;
+  img {
+    height: 54px;
+    padding-left: 38%;
+  }
+  p {
+    font-weight: 16px;
+    font-weight: 800;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
 .label {
   font-size: 16px;
   height: 26px;
@@ -15,10 +34,6 @@ body {
   width: 100%;
 }
 
-.hidden {
-  display: none;
-}
-
 .data_requester {
   height: 54px;
   margin-bottom: 10px;
@@ -26,37 +41,29 @@ body {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.spinner {
-  height: 54px;
-  padding-left: 38%;
-}
-
-#requester-image {
-  margin-left: 15px;
-}
-
-#requester {
-  font-size: 14px;
-  margin-left: 25px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  position: absolute;
-  max-width: 225px;
-  top: 33px;
-  font-weight: 600;
-}
-
-#requester-email {
-  font-size: 12px;
-  margin-left: 25px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  position: absolute;
-  max-width: 220px;
-  top: 52px;
-  font-weight: 600;
+  img {
+    margin-left: 15px;
+  }
+  .name {
+    font-size: 14px;
+    margin-left: 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    max-width: 225px;
+    top: 33px;
+    font-weight: 600;
+  }
+  .email { 
+    font-size: 12px;
+    margin-left: 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    max-width: 220px;
+    top: 52px;
+    font-weight: 600;
+  }
 }
 
 .button {
@@ -66,9 +73,4 @@ body {
 .checkbox {
   margin-top: 20px;
   vertical-align: middle;
-}
-
-#submit_change {
-  margin-left: 109px;
-  margin-top: 20px;
 }

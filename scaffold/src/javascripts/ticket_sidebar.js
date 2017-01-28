@@ -32,17 +32,21 @@ class TicketSidebar {
             let requesterName = data.user.name;
             let requesterEmail = data.user.email;
             let requesterPhoto = data.user.photo;
+            let requesterRole = data.user.role;
             let requesterAvatar;
             if (requesterPhoto === null) {
-              requesterAvatar = 'https://i0.wp.com/assets.zendesk.com/images/2016/default-avatar-80.png';
+              requesterAvatar = 'https://aculligan.github.io/CDN/Universal_App_Assets/img/Zendesk-brand-assets/default-avatar.png';
             } else {
               requesterAvatar = requesterPhoto.content_url;
             }
             $ticketRequester.text(requesterName);
             $ticketRequesterEmail.text(requesterEmail);
             $requesterImage.attr('src', requesterAvatar);
+            if (requesterRole !== 'end-user') {
+              $('.avatar-badge').show();
+            }
             $('.spinner').hide();
-            $('.data_requester .hidden').removeClass('hidden');
+            $('.main-app').removeClass('hidden');
           });
           let $menuButtonContent = $('.menu-btn-content');
           let $menuButton = $('.menu-btn');
@@ -56,8 +60,8 @@ class TicketSidebar {
             $menuButton.prop('disabled', true);
             $menuButtonContent.text(I18n.t('closed-ticket'));
           }
-          let $ticketCollaborators = $('#collaborators');
-          let $menuButtonImage = $('#button-image');
+          let $ticketCollaborators = $('.menu');
+          let $menuButtonImage = $('.menu-btn .c-avatar__img');
           let $menu = $('.menu');
           ga('create', 'UA-87663201-1', 'auto');
           ga('set', 'checkProtocolTask', function (){});
@@ -80,9 +84,10 @@ class TicketSidebar {
               let collaboratorName = data.user.name;
               let collaboratorEmail = data.user.email;
               let collaboratorPhoto = data.user.photo;
+              let collaboratorRole = data.user.role;
               let collaboratorAvatar;
               if (collaboratorPhoto === null) {
-                collaboratorAvatar = 'https://i0.wp.com/assets.zendesk.com/images/2016/default-avatar-80.png';
+                collaboratorAvatar = 'https://aculligan.github.io/CDN/Universal_App_Assets/img/Zendesk-brand-assets/default-avatar.png';
               } else {
                 collaboratorAvatar = collaboratorPhoto.content_url;
               }
@@ -91,12 +96,13 @@ class TicketSidebar {
                 name: collaboratorName,
                 email: collaboratorEmail,
                 avatar: collaboratorAvatar,
+                role: collaboratorRole
               };
               collaborators.push(collaboratorObject);
             });
           });
-          let $checkbox = $('#checkbox');
-          let $submitButton = $('#submit_change');
+          let $checkbox = $('.c-chk__input');
+          let $submitButton = $('.submit-btn');
           $menuButton.click(function () {
             let collaboratorsSorted = _.sortBy(collaborators, 'name');
             let collaboratorsNumber = collaboratorsSorted.length;
@@ -105,17 +111,27 @@ class TicketSidebar {
               let collaboratorObjectID = index.id;
               let collaboratorObjectEmail = index.email;
               let collaboratorObjectAvatar = index.avatar;
+              let collaboratorObjectRole = index.role;
+              let collaboratorBadgeVisble;
+              if (collaboratorObjectRole !== 'end-user') {
+                collaboratorBadgeVisble = 'badge-visible';
+              } else {
+                collaboratorBadgeVisble = '';
+              }
               let collaboratorsLi = $('.menu__item').length;
               if (collaboratorsLi < collaboratorsNumber) {
                 $ticketCollaborators.append($(`
-                  <li class="menu__item" id="${collaboratorObjectID}">
-                    <figure class="c-avatar c-avatar--small"><img id="${collaboratorObjectID}-img" alt="user" src="${collaboratorObjectAvatar}"></figure>
+                  <li class="menu__item" id="${collaboratorObjectID}" badge="${collaboratorBadgeVisble}">
+                    <figure class="c-avatar c-avatar--small"><img class="c-avatar__img" id="${collaboratorObjectID}-img" alt="user" src="${collaboratorObjectAvatar}"></figure>
+                    <img class="collaborator-badge ${collaboratorBadgeVisble}" src="https://aculligan.github.io/CDN/Universal_App_Assets/img/Zendesk-brand-assets/agent-badge.svg">
                     <span class="menu-li-content" id="${collaboratorObjectID}-span" value="${collaboratorObjectID}">${collaboratorObjectName}</span>
                   </li>
                   <li class="c-tooltip tooltip_${collaboratorObjectID}" style="display: none;">${collaboratorObjectEmail}</li>
                   <li class="c-arrow arrow_${collaboratorObjectID}" style="display: none;"></li>`).attr('role', 'menuitem').attr('id', collaboratorObjectID));
               }
-            }); 
+            });
+            let $badgeVisible = $('.badge-visible');
+            $badgeVisible.show();
             $menu.toggle();
             let $menuItem = $('.menu__item');
             $menuItem.hover(function () {
@@ -127,13 +143,19 @@ class TicketSidebar {
               $(`.tooltip_${collaboratorID}`).hide();
               $(`.arrow_${collaboratorID}`).hide();
             });
+            let $buttonBadge = $('.button-badge');
             $menuItem.click(function () {
+              $buttonBadge.removeClass('badge-visible');
+              $buttonBadge.hide();
               let collaboratorID = $(this).attr('id');
               let collaboratorName = $(this).text();
               let collaboratorAvatar = $(`#${collaboratorID}-img`).attr('src');
+              let collaboratorRoleBadge = $(this).attr('badge');
               $menuButtonContent.attr('id', collaboratorID);
-              $('#button-image').attr('src', collaboratorAvatar);
+              $menuButtonImage.attr('src', collaboratorAvatar);
               $menuButtonContent.text(collaboratorName);
+              $buttonBadge.addClass(collaboratorRoleBadge);
+              $badgeVisible.show();
               $menu.hide();
               $checkbox.prop('disabled', false);
               $('.checkbox .label').removeClass('hidden');
@@ -143,7 +165,9 @@ class TicketSidebar {
             $(document).mouseup(function (e) {
               if (!$menuButton.is(e.target) && !$menuButtonContent.is(e.target) && !$menuButtonImage.is(e.target) && !$('.menu-btn-icon-arrow-down').is(e.target) && !$('ul').is(e.target) && !$('li').is(e.target) && $menu.is(':visible')) {
                 $menu.hide();
-                $menuButtonImage.attr('src', 'https://i0.wp.com/assets.zendesk.com/images/2016/default-avatar-80.png');
+                $buttonBadge.removeClass('badge-visible');
+                $buttonBadge.hide();
+                $menuButtonImage.attr('src', 'https://aculligan.github.io/CDN/Universal_App_Assets/img/Zendesk-brand-assets/default-avatar.png');
                 $menuButtonContent.text('').attr('id', '');
                 $checkbox.prop('disabled', true);
                 $('.checkbox .label').addClass('hidden');
@@ -154,7 +178,9 @@ class TicketSidebar {
            $(document).keyup(function (e) {
               if (e.keyCode === 27 && $menu.is(':visible')) {
                 $menu.hide();
-                $menuButtonImage.attr('src', 'https://i0.wp.com/assets.zendesk.com/images/2016/default-avatar-80.png');
+                $buttonBadge.removeClass('badge-visible');
+                $buttonBadge.hide();
+                $menuButtonImage.attr('src', 'https://aculligan.github.io/CDN/Universal_App_Assets/img/Zendesk-brand-assets/default-avatar.png');
                 $menuButtonContent.text('').attr('id', '');
                 $checkbox.prop('disabled', true);
                 $('.checkbox .label').addClass('hidden');
@@ -171,7 +197,7 @@ class TicketSidebar {
             let collaboratorsAndRequesterArray = _.union(requesterArray, collaboratorIDs);
             let collaboratorsArrayAdd = _.without(collaboratorsAndRequesterArray, selectedCCValue);
             let collaboratorsArrayRemove = _.without(collaboratorIDs, selectedCCValue);
-            let ccCurrentRequester = $('#checkbox').is(':checked');
+            let ccCurrentRequester = $checkbox.is(':checked');
             let addCC = {
               url: `/api/v2/tickets/${ticketID}.json`,
               type: 'PUT',

@@ -1,8 +1,8 @@
 .c-tooltip {
-  background-color: #333;
+  background-color: $black;
   border-radius: 4px;
   box-sizing: border-box;
-  color: #fff;
+  color: $white;
   font-size: 12px;
   font-weight: 400;
   left: 21px;
@@ -19,8 +19,9 @@
 }
 
 .c-arrow {
-  background-color: #333;
+  background-color: $black;
   border-width: 10px;
+  display: none;
   height: 6px;
   left: 30px;
   margin: -10px 0 -16px 0;

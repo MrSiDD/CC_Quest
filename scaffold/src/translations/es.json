@@ -8,5 +8,6 @@
   "old-cc": "Mantener al Solicitante original en CC",
   "submit": "Enviar",
   "closed-ticket": "Este Ticket está Cerrado",
-  "no-ccs": "No hay CCs Disponibles"
+  "no-ccs": "No hay CCs Disponibles",
+  "loading": "Cargando"
 }

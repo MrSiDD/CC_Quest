@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://aculligan.github.io/CDN/Universal_App_Assets/main.css">
-    <link rel="stylesheet" href="https://aculligan.github.io/CDN/CC_Quest/style-min.css">
+    <!--<link rel="stylesheet" href="https://aculligan.github.io/CDN/CC_Quest/style-min.css">-->
     <script type="text/javascript" src="https://aculligan.github.io/CDN/Universal_App_Assets/Google_Analytics.js"></script>
     <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
