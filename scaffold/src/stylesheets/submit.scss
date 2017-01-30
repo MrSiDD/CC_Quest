@@ -1,64 +1,15 @@
 .submit-btn {
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-touch-callout: none;
-  -webkit-transition: border-color .25s ease-in-out,box-shadow .1s ease-in-out,background-color .25s ease-in-out,color .25s ease-in-out;
-  -webkit-user-select: none;
   background-color: $black;
   border-color: transparent;
-  border-radius: 4px;
   border: 1px solid $black;
-  box-sizing: border-box;
   color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 2.34;
   margin: 20px 0 0 109px;
-  min-width: 8.3334em;
-  overflow: visible;
-  padding: 0 2.25em;
-  text-align: center;
-  text-decoration: none;
-  transition: border-color .25s ease-in-out,box-shadow .1s ease-in-out,background-color .25s ease-in-out,color .25s ease-in-out;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
   &:hover {
     background-color: $gray-darker;
-    border-color: transparent;
     color: $white;
-    text-decoration: none;
-    &:active {
-      box-shadow: none;
-    }
-  }
-  &:focus {
-    outline: none;
-    &:active {
-      box-shadow: none;
-    }
   }
   &:active {
-    -webkit-transition: border-color .1s ease-in-out,background-color .1s ease-in-out,color .1s ease-in-out;
     background-color: $gray-darker;
-    border-color: transparent;
     color: $white;
-    text-decoration: none;
-    transition: border-color .1s ease-in-out,background-color .1s ease-in-out,color .1s ease-in-out;
-  }
-  &:disabled:disabled {
-    background-color: $gray-light;
-    border-color: transparent;
-    box-shadow: none;
-    color: $white;
-    cursor: default;
   }
 }

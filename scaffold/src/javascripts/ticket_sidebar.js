@@ -121,7 +121,7 @@ class TicketSidebar {
               let collaboratorsLi = $('.menu__item').length;
               if (collaboratorsLi < collaboratorsNumber) {
                 $ticketCollaborators.append($(`
-                  <li class="menu__item" id="${collaboratorObjectID}" badge="${collaboratorBadgeVisble}">
+                  <li class="menu__item c-menu__item" id="${collaboratorObjectID}" badge="${collaboratorBadgeVisble}">
                     <figure class="c-avatar c-avatar--small"><img class="c-avatar__img" id="${collaboratorObjectID}-img" alt="user" src="${collaboratorObjectAvatar}"></figure>
                     <img class="collaborator-badge ${collaboratorBadgeVisble}" src="https://aculligan.github.io/CDN/Universal_App_Assets/img/Zendesk-brand-assets/agent-badge.svg">
                     <span class="menu-li-content" id="${collaboratorObjectID}-span" value="${collaboratorObjectID}">${collaboratorObjectName}</span>

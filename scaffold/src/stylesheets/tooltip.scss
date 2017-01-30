@@ -1,17 +1,9 @@
 .c-tooltip {
-  background-color: $black;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: $white;
-  font-size: 12px;
-  font-weight: 400;
   left: 21px;
-  line-height: 1.66667;
   margin: 0;
-  margin-top: -16px;
-  max-width: 250px;
+  margin-top: -18px;
+  max-width: 85%;
   overflow: hidden;
-  padding: 0 1.25em;
   position: relative;
   text-overflow: ellipsis;
   top: 3px;
@@ -19,16 +11,15 @@
 }
 
 .c-arrow {
-  background-color: $black;
+  background-color: #03363d;
   border-width: 10px;
   display: none;
   height: 6px;
   left: 30px;
   margin: -10px 0 -16px 0;
-  max-width: 6px;
+  width: 6px;
   overflow: hidden;
-  position: relative;
-  top: -16px;
+  top: -15px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);

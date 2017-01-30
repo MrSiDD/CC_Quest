@@ -1,38 +1,3 @@
-.c-avatar {
-  -webkit-transition: background-color .3s;
-  border-radius: 50%;
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  display: inline-block;
-  height: 34px;
-  transition: background-color .3s;
-  vertical-align: middle;
-  width: 34px;
-  .c-avatar__img {
-    -webkit-transition: all .3s;
-    background-clip: content-box;
-    background-color: $white;
-    border-radius: 50%;
-    border: 1px solid $gray-light;
-    box-sizing: inherit;
-    height: 100%;
-    transition: all .3s;
-    vertical-align: bottom;
-    width: 100%;
-  }
-}
-
-.c-avatar--large {
-  border-width: 2px;
-  height: 54px;
-  width: 54px;
-}
-
-.c-avatar--small {
-  height: 26px;
-  width: 26px;
-}
-
 .avatar-badge {
   display: none;
   left: 37px;

@@ -18,7 +18,7 @@
    {{t "ccs"}}:
  </span>
  <div class="button">
-   <button class="menu-btn" role="button" type="button">
+   <button class="c-btn c-btn--medium c-btn--full menu-btn" role="button" type="button">
      <figure class="c-avatar c-avatar--small">
       <img class="c-avatar__img" alt="user" src="https://aculligan.github.io/CDN/Universal_App_Assets/img/Zendesk-brand-assets/default-avatar.png">
      </figure>
@@ -29,7 +29,7 @@
    </button>
  </div>
  <div>
-   <ul id="collaborators" class="menu" role="menu">
+   <ul id="collaborators" class="menu c-menu" role="menu">
    </ul>
  </div>
  <div class="checkbox">
@@ -42,6 +42,6 @@
    </span>
  </div>
  <div>
-   <input class="submit-btn" type="button" id="submit_change" value="{{t "submit"}}" disabled="disabled">
+   <input class="c-btn submit-btn" type="button" id="submit_change" value="{{t "submit"}}" disabled="disabled">
  </div>
 </div>
