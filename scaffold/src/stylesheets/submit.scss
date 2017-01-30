@@ -1,15 +1,15 @@
 .submit-btn {
-  background-color: $black;
+  background-color: $oil;
   border-color: transparent;
-  border: 1px solid $black;
+  border: 1px solid $oil;
   color: $white;
   margin: 20px 0 0 109px;
   &:hover {
-    background-color: $gray-darker;
+    background-color: $dark-gray;
     color: $white;
   }
   &:active {
-    background-color: $gray-darker;
+    background-color: $dark-gray;
     color: $white;
   }
 }

@@ -1,18 +1,18 @@
 .menu-btn {
-  border: 1px solid $gray-light;
-  color: $gray-dark;
+  border: 1px solid $gainsboro;
+  color: $jumbo;
   overflow: hidden;
   padding-left: 20px;
   text-align: left;
   text-overflow: ellipsis;
   max-height: 40px;
   &:hover {
-    background-color: $smoke;
-    color: $black;
-    border: 1px solid $gray-light;
+    background-color: $white-smoke;
+    color: $oil;
+    border: 1px solid $gainsboro;
   }
   &:disabled:disabled {
-    background-color: $gray-light;
+    background-color: $gainsboro;
     color: $white;
   }
   .c-avatar {
