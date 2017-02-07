@@ -174,7 +174,7 @@ class TicketSidebar {
                 $submitButton.prop('disabled', true);
               }
             });
-           $(document).keyup(function (e) {
+            $(document).keyup(function (e) {
               if (e.keyCode === 27 && $menu.is(':visible')) {
                 $menu.hide();
                 $buttonBadge.removeClass('badge-visible');
