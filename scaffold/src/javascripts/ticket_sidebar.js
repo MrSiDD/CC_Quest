@@ -1,3 +1,9 @@
+/*
+* TODO: Add comments
+* TODO: Cache jQuery lookups
+* TODO: Make gAnalytics function
+*/
+
 import View from 'view';
 import Storage from 'storage';
 import I18n from 'i18n';
