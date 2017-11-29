@@ -69,7 +69,7 @@ class TicketSidebar {
           let $ticketCollaborators = $('.menu');
           let $menuButtonImage = $('.menu-btn .c-avatar__img');
           let $menu = $('.menu');
-          ga('create', 'UA-87663201-1', 'auto');
+          /*ga('create', 'UA-87663201-1', 'auto');
           ga('set', 'checkProtocolTask', function (){});
           ga('require', 'displayfeatures');
           ga('send', {
@@ -77,7 +77,7 @@ class TicketSidebar {
             eventCategory: 'Usage',
             eventAction: 'Use',
             eventLabel: 'Active User'
-          });
+          });*/
           let collaborators = [];
           _.each(collaboratorIDs, function (collaboratorID) {
             let getCC = {
@@ -217,7 +217,7 @@ class TicketSidebar {
             };
             if (ccCurrentRequester === true) {
               client.request(addCC);
-              ga('create', 'UA-87663201-1', 'auto');
+              /*ga('create', 'UA-87663201-1', 'auto');
               ga('set', 'checkProtocolTask', function (){});
               ga('require', 'displayfeatures');
               ga('send', {
@@ -225,7 +225,7 @@ class TicketSidebar {
                 eventCategory: 'Swith',
                 eventAction: 'Keep Requester CCd',
                 eventLabel: 'Keep Requester CCd'
-              });
+              });*/
             } else if (ccCurrentRequester !== true) {
               client.request(removeCC);
             }
@@ -234,12 +234,12 @@ class TicketSidebar {
       });
       client.on('ticket.updated', function () {
         window.location.reload(true);
-        ga('send', {
+        /*ga('send', {
           hitType: 'event',
           eventCategory: 'Swith',
           eventAction: 'CC Switched',
           eventLabel: 'CC Switched'
-        });
+        });*/
       });
     }});
 
