@@ -60,6 +60,7 @@ class TicketSidebar {
           if (collaboratorIDs.length < 1) {
             $menuButton.prop('disabled', true);
             $menuButtonContent.text(I18n.t('no-ccs'));
+            $('.main-app').addClass('hidden');
           }
           let ticketStatus = data.ticket.status;
           if (ticketStatus === 'closed') {
